@@ -20,7 +20,7 @@ const getCurrences = () => {
     .then(res => {
         console.log(res);    
             let shortDate; 
-            let data = res.map((item, index)=> {
+            let data = res.map(item=> {
                 if(item.Note) {
                     let oneDay = "API Limit reached";
                     item = oneDay;

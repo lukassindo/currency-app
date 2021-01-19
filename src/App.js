@@ -21,11 +21,11 @@ class App extends React.Component {
 
   async componentDidMount() {
     try {
-      const usd = await CurrencyService.getCurrences();
-      console.log(typeof usd);
-      console.log(usd);
+      const currency = await CurrencyService.getCurrences();
+      console.log(typeof currency);
+      console.log(currency);
 
-      this.setState({currData: usd});
+      this.setState({currData: currency});
     } catch(err) {
       console.log(err);
     }
