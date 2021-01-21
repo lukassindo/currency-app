@@ -6,10 +6,10 @@ const getCurrences = () => {
     let dataToGo = [];
     const currences = ['USD','EUR','GBP','CZK','CAD']; 
     const urls = [];
-    for(let i = 0; i < currences.length; i++) {
-        let url = `https://www.alphavantage.co/query?function=FX_DAILY&from_symbol=PLN&to_symbol=${currences[i]}&apikey=Z8UD320S1274I7YY`;
+    currences.forEach(item => {
+        let url = `https://www.alphavantage.co/query?function=FX_DAILY&from_symbol=PLN&to_symbol=${item}&apikey=Z8UD320S1274I7YY`;
         urls.push(url);
-    }
+    })
 
    
     return Promise.all(urls.map(url => {
