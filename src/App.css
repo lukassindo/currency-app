@@ -8,8 +8,8 @@
   padding-top: 40px;
 }
 
-
-.App-header, main {
+.App-header,
+main {
   background-color: #282c34;
   display: flex;
   flex-direction: column;
@@ -18,7 +18,9 @@
   font-size: calc(10px + 2vmin);
   color: white;
 }
-main {padding-bottom: 60px;}
+main {
+  padding-bottom: 60px;
+}
 #currency td {
   border: 2px solid;
   text-align: left;
@@ -28,5 +30,3 @@ main {padding-bottom: 60px;}
 .App-link {
   color: #61dafb;
 }
-
-
