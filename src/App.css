@@ -1,3 +1,10 @@
+
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  background-color: #282c34;
+}
 .App {
   text-align: center;
 }
@@ -29,4 +36,16 @@ main {
 
 .App-link {
   color: #61dafb;
+}
+table.weekly {
+  margin-top: 20px;
+}
+table.weekly caption {
+  font-size: 34px;
+  font-weight: 700;
+  padding-bottom: 10px;
+}
+table.weekly td, table.weekly th {
+  border: 2px solid;
+  padding: 7px;
 }

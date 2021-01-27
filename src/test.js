@@ -32,4 +32,5 @@ const cezar = (string) => {
 }
 console.log(cezar("Zebra")); 
 console.log(cezar("Zebra w Zanzibarze"));
+console.log(cezar("Ala ma kota!"));
 

@@ -12,7 +12,6 @@ const getCurrences = () => {
       return fetch(url).then((response) => response.json());
     })
   ).then((res) => {
-    console.log(res);
     let shortDate;
     let data = res.map((item) => {
       if (item.Note) throw "API Limit reached";
@@ -23,7 +22,6 @@ const getCurrences = () => {
 
       return item;
     });
-    console.log(data);
     dataToGo = data;
     shortDate !== undefined
       ? dataToGo.unshift(shortDate)
@@ -32,6 +30,27 @@ const getCurrences = () => {
   });
 };
 
+const getWeekly = (currency) => {
+  let weeklyData = [];
+  const url = `https://www.alphavantage.co/query?function=FX_WEEKLY&from_symbol=PLN&to_symbol=${currency}&apikey=Z8UD320S1274I7YY`;
+  return fetch(url)
+    .then((response) => response.json())
+    .then((data) => {
+        console.log(data);    
+        if (data.Note) throw "API Limit reached";
+        const date = data["Meta Data"]["4. Last Refreshed"];
+        const shortDate = date.slice(0, 10);
+        let openData = data["Time Series FX (Weekly)"][shortDate]["1. open"];
+        let closeData = data["Time Series FX (Weekly)"][shortDate]["4. close"];
+        weeklyData.push(`PLN/${currency}`, `Last Friday - ${shortDate}`, openData, closeData);
+        return weeklyData;
+     
+    });
+}
+
+
+
 export default {
   getCurrences,
+  getWeekly,
 };
